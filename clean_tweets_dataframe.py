@@ -21,6 +21,9 @@ class Clean_Tweets:
         drop duplicate rows
         """
         
+                unwanted_rows = df[df['retweet_count'] == 'retweet_count' ].index
+        df.drop(unwanted_rows , inplace=True)
+        df = df[df['polarity'] != 'polarity']
         ---
         
         return df
